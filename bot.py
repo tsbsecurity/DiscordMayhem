@@ -37,15 +37,14 @@ async def on_disconnect():
 
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("token", help="specify bot token from discord")
-    args = parser.parse_args()
+    print("[*] Loading bot, this can take a few minutes...")
+    from utils import kys
+    kys()
 
     cogs = {"cogs.play"}
     for cog in cogs:
         client.load_extension(cog)
         print(f"[*] {cog} has been loaded successfully")
 
-    client.run(args.token)
+    token = input("Please provide your bot token: ")
+    client.run(token)

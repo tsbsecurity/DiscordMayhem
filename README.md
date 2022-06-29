@@ -52,3 +52,5 @@ python bot.py
 ```
 
 ---
+
+*I am not responsible for any damages or illegal activity that may occur from your own actions when using this software!*

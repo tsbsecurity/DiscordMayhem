@@ -36,15 +36,16 @@ async def on_disconnect():
     print("[!] Bot has disconnected from Discord")
 
 
-if __name__ == "__main__":
-    print("[*] Loading bot, this can take a few minutes...")
-    from utils import kys
-    kys()
+def main():
+    token = input("Please specify your Discord Bot's token: ")
 
     cogs = {"cogs.play"}
     for cog in cogs:
         client.load_extension(cog)
         print(f"[*] {cog} has been loaded successfully")
 
-    token = input("Please provide your bot token: ")
     client.run(token)
+
+
+if __name__ == "__main__":
+    main()

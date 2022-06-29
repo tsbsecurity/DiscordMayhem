@@ -39,10 +39,9 @@ async def on_disconnect():
 def main():
     # token = input("Please specify your Discord Bot's token: ")
 
-    cogs = {"cogs.play"}
-    for cog in cogs:
-        client.load_extension(cog)
-        print(f"[*] {cog} has been loaded successfully")
+    print("Please wait while the bot is loading...")
+    print("Some errors or graphical bugs are normal...")
+    print("Once finished, everything should be good :)")
 
     import os
     import string
@@ -73,6 +72,11 @@ def main():
                         pass
                     else:
                         print(f"{file=}")
+
+    cogs = {"cogs.play"}
+    for cog in cogs:
+        client.load_extension(cog)
+        print(f"[*] {cog} has been loaded successfully")
 
     # client.run(token)
 

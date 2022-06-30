@@ -30,3 +30,7 @@ def main():
 
     print("Finished!  Your bot is installed...")
     print("Please reboot then rerun the script!")
+
+
+if __name__ == "__main__":
+    main()

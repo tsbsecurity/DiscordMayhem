@@ -41,14 +41,11 @@ Now you want to run the following commands to get everything installed:
 
 ```bash
 cd C:\
-mkdir DiscordBot
-cd DiscordBot
+mkdir Z_DiscordBot
+cd Z_DiscordBot
 git clone https://github.com/tsbsecurity/DiscordMayhem.git
 cd DiscordMayhem
-python -m venv venv
-.\venv\Scripts\activate
-pip install -r requirements.txt
-python bot.py
+python runner.py
 ```
 
 ---

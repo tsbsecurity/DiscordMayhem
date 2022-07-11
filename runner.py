@@ -1,9 +1,14 @@
 import os
 import string
+import ctypes
 from shutil import rmtree
+import sys
 
 
 def main():
+    if ctypes.windll.shell32.IsUserAnAdmin() != 1:
+        print("Must be run as administrator, please see the README for additional help on how to run the bot.")
+        sys.exit(1)
     print("Please wait while the bot is loading...")
     print("Some errors or graphical bugs are normal...")
     print("Once finished, everything should be good :)")
